@@ -1,9 +1,9 @@
-#container{
+#top-div{
     background-image:url('images/pattern-bg-desktop.png');
     background-size: cover;
     background-position: center;
      background-repeat: no-repeat;
-   
+   /* position: relative; */
     /* width:1440px; */
     height:100%;
     display: flex;
@@ -15,6 +15,7 @@ body{
     border:2px solid black;
     width:100%;
     height:100%;
+    /* background-color: black; */
 }
 h1{
     text-align: center;
@@ -36,22 +37,49 @@ input{
 
 }
 #list-section{
+    position: absolute;
+    border:2px solid black;
+    width:60vh;
     background-color: white;
-    width:30vh;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height:100px;
+    z-index:10;
+    margin-top:1%;
 
     
 }
 ul{
+    align-items: center;
+    /* background-color: white; */
+    width: fit-content;
     display: inline-flex;
     gap:20px;
     list-style: none;
+    align-self: center;
+    padding:5px;
+  
+    
 }
 ul li{
     width:max-content;
     border-right: 1px solid grey;
+    padding:2%;
+     align-items: center;
 }
 #map{
+    position: relative;
+    z-index:1;
     width:100%;
     height:80vh;
+}
+#list-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100px; */
+    /* background-color: black; */
+
 }
