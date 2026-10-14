@@ -1,18 +1,24 @@
 import { API_KEY } from "./secret.js";
 const btnSubmit = document.getElementById('btnSubmit');
 const searchInputfield = document.getElementById('searchInput');
-const para1 = document.getElementById('p1');
+const para_ip = document.getElementById('para_ip');
+const para_location = document.getElementById('para_location');
+const para_timezone = document.getElementById('para_timezone');
+const para_isp = document.getElementById('para_isp');
 
 
-async function makeRequest(event) {
-    const ipAddress=getInput(event);
-    console.log(ipAddress);
-    const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`);
+async function makeRequest(ipAddress="") {
+    
     try {
+        // const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`);
         console.log(response)
         const data = await (response.json());
         console.log(data);
-        para1.textContent=data.ip;
+        para_ip.textContent=data.ip;
+        para_location.textContent = data.location.city+`\n`+data.location.country;
+        para_timezone.textContent = data.location.timezone;
+        para_isp.textContent = data.isp;
+
     } catch (error) {
 
         console.log(error);
@@ -20,14 +26,26 @@ async function makeRequest(event) {
     }
 }
 
-btnSubmit.addEventListener('click',makeRequest);
+
 function getInput(event){
     event.preventDefault();
-    if(!searchInputfield || searchInputfield.value===""){
+    if(!searchInputfield ){
         new Error('Error occured');
+        return;
+    } else if(searchInputfield===""){
+        alert('Please enter valid IP address or domain');
         return;
     }
     const ipAddress = searchInputfield.value;
-    console.log(ipAddress+"---")
-    return ipAddress;
+    searchInputfield.value=""; 
+    console.log(ipAddress);
+    makeRequest(ipAddress);
 }
+
+
+btnSubmit.addEventListener('click',getInput);
+
+//automatically retriving IP address on page load
+document.addEventListener('DOMContentLoaded',()=>{
+    makeRequest("");
+})
