@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
+  <script type = "module" src="app.js"></script>
   <title>Frontend Mentor | IP Address Tracker</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -31,23 +31,37 @@
     <h1>IP Address Tracker</h1>
     <form>
       <input type="text" placeholder="Search for any IP address or domain" required="" aria-label="search">
-      
+
     </form>
 
   </section>
-<div id="list-container">
-<section id="list-section">
-    <ul>
-      <li>IP Address</li>
-      <li>Location</li>
-      <li>Timezone</li>
-      <!-- <li>UTC add offset value dynamically using the API</li> -->
-      <li>ISP</li>
+  <div id="list-container">
+    <section id="list-section">
+      <ul>
+        <li>
+          <h2>IP Address</h2>
+          <p>192.212.174.101</p>
+        </li>
+        <li>
+          <h2>Location</h2>
+          <p>Brooklyn NY 10001</p>
+        </li>
+        <li>
+          <h2>Timezone</h2>
+          <p>
+            UTC-05:00
+          </p>
+        </li>
+        <!-- <li>UTC add offset value dynamically using the API</li> -->
+        <li>
+          <h2>ISP</h2>
+          <p>SpaceX Starlink</p>
+        </li>
 
-    </ul>
+      </ul>
 
-  </section>
-</div>
+    </section>
+  </div>
   <section id="map">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
