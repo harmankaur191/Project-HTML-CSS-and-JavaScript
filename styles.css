@@ -27,6 +27,17 @@ form{
     align-content: center; 
     justify-content: center;
     padding: 2%;
+    display: flex;
+    flex-direction: inline;
+    
+}
+button{
+    background-color: black;
+    height:7vh;
+    border-radius: 5px;
+}
+img{
+    background-color: black;
 }
 input{
     font-size:18px;
@@ -47,7 +58,7 @@ input{
     border-radius: 10px;
     height:100px;
     z-index:10;
-    margin-top:1%;
+    margin-top:3%;
 
     
 }
