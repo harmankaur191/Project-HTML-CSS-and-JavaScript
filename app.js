@@ -7,10 +7,10 @@ const para_timezone = document.getElementById('para_timezone');
 const para_isp = document.getElementById('para_isp');
 
 
-async function makeRequest(ipAddress="") {
+export async function makeRequest(ipAddress="") {
     
     try {
-        // const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`);
+        const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`);
         console.log(response)
         const data = await (response.json());
         console.log(data);
@@ -18,6 +18,8 @@ async function makeRequest(ipAddress="") {
         para_location.textContent = data.location.city+`\n`+data.location.country;
         para_timezone.textContent = data.location.timezone;
         para_isp.textContent = data.isp;
+        console.log(data)
+        return data;
 
     } catch (error) {
 
