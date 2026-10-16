@@ -1,20 +1,29 @@
 import { makeRequest } from './app.js'
 import { ipAddress } from './app.js';
-//setting latitude, longitude and zoom level
 
-//let data = await makeRequest(ipAddress);
+let marker = null;
+let map = null;
+
 export function setMap(data) {
-    console.log(data);
-    console.log(data.location.lat);
-    var map = L.map('map').setView([data.location.lat, data.location.lng], 10);
-    const tileUrl = ' https://tile.openstreetmap.org/{z}/{x}/{y}.png';
-    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+    if (map!==null) {
+        map.remove();
+        map===null
+        
+    }
+         console.log(data);
+        console.log(data.location.lat);
+         map = L.map('map').setView([data.location.lat, data.location.lng], 10);
+        const tileUrl = ' https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
-    const tiles = L.tileLayer(tileUrl, { attribution }).addTo(map);
+        const tiles = L.tileLayer(tileUrl, { attribution }).addTo(map);
 
-    L.marker([data.location.lat, data.location.lng]).addTo(map)
-        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-        .openPopup();
+        L.marker([data.location.lat, data.location.lng],10).addTo(map)
+            .bindPopup("IP address tracked!'\n'"+ data.location.city +" ,"+data.location.country)
+            .openPopup();
+
+    
+
 
 }
 
