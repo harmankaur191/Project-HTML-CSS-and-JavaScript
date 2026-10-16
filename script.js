@@ -12,14 +12,14 @@ export function setMap(data) {
     }
          console.log(data);
         console.log(data.location.lat);
-         map = L.map('map').setView([data.location.lat, data.location.lng], 10);
+         map = L.map('map').setView([data.location.lat, data.location.lng], 13);
         const tileUrl = ' https://tile.openstreetmap.org/{z}/{x}/{y}.png';
         const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
         const tiles = L.tileLayer(tileUrl, { attribution }).addTo(map);
 
-        L.marker([data.location.lat, data.location.lng],10).addTo(map)
-            .bindPopup("IP address tracked!'\n'"+ data.location.city +" ,"+data.location.country)
+        L.marker([data.location.lat, data.location.lng],13).addTo(map)
+            .bindPopup(`IP address tracked!  ${data.location.city}, ${data.location.country}`)
             .openPopup();
 
     

@@ -10,29 +10,19 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script type = "module" src="app.js" defer></script>
+  <script type="module" src="app.js" defer></script>
   <title>Frontend Mentor | IP Address Tracker</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    /* .attribution {
-      font-size: 0.6875rem;
-      text-align: center;
-    } */
-
-    /* .attribution a {
-      color: hsl(228, 45%, 44%);
-    } */
-  </style>
 </head>
 
 <body id="main-container">
   <section id="top-div">
     <h1>IP Address Tracker</h1>
     <form id="form">
-      <input type="text" id="searchInput" placeholder="Search for any IP address or domain" required="" aria-label="search">
+      <input type="text" id="searchInput" placeholder="Search for any IP address or domain" required=""
+        aria-label="search">
       <button type="submit" id="btnSubmit"><img src="images/icon-arrow.svg"></button>
-192.212.174.101
+
     </form>
 
   </section>
@@ -50,11 +40,11 @@
         <li>
           <h2>Timezone</h2>
           <p id="para_timezone">
-            
+
           </p>
         </li>
-        <!-- <li>UTC add offset value dynamically using the API</li> -->
-        <li>
+
+        <li id="last-item">
           <h2>ISP</h2>
           <p id="para_isp"></p>
         </li>
