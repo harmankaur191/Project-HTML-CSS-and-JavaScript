@@ -12,7 +12,9 @@ Achieving the responsive UI was bit difficult but after spending sometime it wor
 
 
 ## Project Deployment:
-on Netlify: 
+Project live on Netlify.
+Checkout the project here:
+(https://remarkable-jalebi-593903.netlify.app)
 
 
 

@@ -1,4 +1,4 @@
-import { API_KEY } from "./secret.js";
+import { API_KEY} from "./secret.js";
 import {setMap} from "./script.js";
 
 const btnSubmit = document.getElementById('btnSubmit');
