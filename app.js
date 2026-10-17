@@ -13,7 +13,7 @@ export let ipAddress;
 export async function makeRequest(ipAddress = "") {
 
     try {
-         const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`);
+        const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`);
         console.log(response)
         const data = await (response.json());
         console.log(data);
